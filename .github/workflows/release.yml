@@ -1,8 +1,10 @@
 name: Release CI
 
 on:
-  release:
-    types: [ created ]
+  created:
+    tags:
+      - v*
+
 jobs:
   build:
     runs-on: ubuntu-latest 
