@@ -1,7 +1,7 @@
 name: Release CI
 
 on:
-  created:
+  create:
     tags:
       - v*
 
