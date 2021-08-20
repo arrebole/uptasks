@@ -12,8 +12,8 @@ export function API() {
     descriptor.value = function (...args) {
       return method
         .apply(this, [...args])
-        .then((result) => result?.data)
-        .catch((error) => error.response.data);
+        .then((result) => result)
+        .catch((error) => error);
     };
     return descriptor;
   };
