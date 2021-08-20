@@ -3,7 +3,8 @@ import { API } from './descriptor';
 import { UptaskConfig } from './config';
 
 export interface Params {
-  accountName: string;
+  accountName?: string;
+  accountId?: number;
 }
 
 export class Uptask {
@@ -27,10 +28,10 @@ export class Uptask {
    * 任务: 通过实名认证（绑定手机)
    */
   @API()
-  verified(params: Params) {
+  verified(params: Params = {}) {
     return this.httpService.post('/tasks', {
       event_id: 'Verified',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -41,7 +42,7 @@ export class Uptask {
   createService(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'CreateService',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -52,7 +53,7 @@ export class Uptask {
   expendOne(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ExpendOne',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -63,7 +64,7 @@ export class Uptask {
   followWeChat(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'FollowWeChat',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -74,7 +75,7 @@ export class Uptask {
   followWeibo(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'FollowWeibo',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -85,7 +86,7 @@ export class Uptask {
   applySSL(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ApplySSL',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -96,7 +97,7 @@ export class Uptask {
   createOperator(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'CreateOperator',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -107,7 +108,7 @@ export class Uptask {
   buyResource(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'BuyResource',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -118,7 +119,7 @@ export class Uptask {
   addUpyunWechat(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'AddUpyunWechat',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -129,7 +130,7 @@ export class Uptask {
   followZhihu(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'FollowZhihu',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -140,7 +141,7 @@ export class Uptask {
   singleBigRecharge(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'SingleBigRecharge',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -151,7 +152,7 @@ export class Uptask {
   inviteNewUsers(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'InviteNewUsers',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -162,7 +163,7 @@ export class Uptask {
   recharge(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'Recharge',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -173,7 +174,7 @@ export class Uptask {
   friendsHelp(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'FriendsHelp',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -184,7 +185,7 @@ export class Uptask {
   useWebP(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'UseWebP',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -195,7 +196,7 @@ export class Uptask {
   checkSSL(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'CheckSSL',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -206,7 +207,7 @@ export class Uptask {
   viewStationMessag(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ViewStationMessag',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -217,7 +218,7 @@ export class Uptask {
   viewProductDoc(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ViewProductDoc',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -228,7 +229,7 @@ export class Uptask {
   viewSSLCertificat(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ViewSSLCertificat',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -239,7 +240,7 @@ export class Uptask {
   viewAppSolution(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ViewAppSolution',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -250,7 +251,7 @@ export class Uptask {
   viewUpyunLog(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ViewUpyunLog',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -261,7 +262,7 @@ export class Uptask {
   viewOpenTalk(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ViewOpenTalk',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -272,7 +273,7 @@ export class Uptask {
   viewSdkTools(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ViewSdkTools',
-      account_name: params.accountName,
+      ...params,
     });
   }
 
@@ -283,7 +284,7 @@ export class Uptask {
   viewKnowledgeBase(params: Params) {
     return this.httpService.post('/tasks', {
       event_id: 'ViewKnowledgeBase',
-      account_name: params.accountName,
+      ...params,
     });
   }
 }
