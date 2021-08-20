@@ -16,6 +16,7 @@ export class Uptask {
     this.httpService = axios.create({
       baseURL: options.url,
       timeout: options.timeout || 3000,
+      withCredentials: true,
       headers: {
         'x-token': options.token || '',
       },
