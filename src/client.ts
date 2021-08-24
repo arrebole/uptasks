@@ -205,9 +205,9 @@ export class Uptask {
    * 任务: 查看站内信
    */
   @API()
-  viewStationMessag(params: Params) {
+  viewStationMessage(params: Params) {
     return this.httpService.post('/tasks', {
-      event_id: 'ViewStationMessag',
+      event_id: 'ViewStationMessage',
       ...params,
     });
   }
