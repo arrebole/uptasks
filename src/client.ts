@@ -227,9 +227,9 @@ export class Uptask {
    * 任务: 浏览 SSL 证书页面（15s)
    */
   @API()
-  viewSSLCertificat(params: Params) {
+  viewSSLCertificate(params: Params) {
     return this.httpService.post('/tasks', {
-      event_id: 'ViewSSLCertificat',
+      event_id: 'ViewSSLCertificate',
       ...params,
     });
   }
